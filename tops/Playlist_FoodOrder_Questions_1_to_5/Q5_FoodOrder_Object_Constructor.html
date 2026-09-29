@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Question 5 - FoodOrder Object Constructor</title></head>
+<body>
+  <h1>Question 5: FoodOrder Constructor with Object</h1>
+  <pre id="output"></pre>
+  <script>
+    class FoodOrder {
+      constructor({ orderId, restaurantName, isDelivered }) {
+        this.orderId = orderId;
+        this.restaurantName = restaurantName;
+        this.isDelivered = isDelivered;
+      }
+
+      markDelivered() {
+        this.isDelivered = true;
+        return `Order ${this.orderId} from ${this.restaurantName} has been delivered.`;
+      }
+    }
+
+    const order = new FoodOrder({
+      orderId: 102,
+      restaurantName: "Burger House",
+      isDelivered: false
+    });
+
+    document.getElementById("output").textContent =
+      `Order ID: ${order.orderId}\nRestaurant: ${order.restaurantName}\nIs Delivered: ${order.isDelivered}`;
+  </script>
+</body>
+</html>

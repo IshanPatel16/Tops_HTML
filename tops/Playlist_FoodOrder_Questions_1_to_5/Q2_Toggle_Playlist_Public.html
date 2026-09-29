@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Question 2 - Toggle Public</title></head>
+<body>
+  <h1>Question 2: Toggle Playlist Public</h1>
+  <pre id="output"></pre>
+  <script>
+    class Playlist {
+      constructor(name, createdOn, isPublic) {
+        this.name = name;
+        this.createdOn = createdOn;
+        this.isPublic = isPublic;
+      }
+
+      togglePublic() {
+        this.isPublic = !this.isPublic;
+      }
+    }
+
+    const playlist = new Playlist("My Favorites", new Date("2026-09-29"), true);
+    const output = document.getElementById("output");
+    output.textContent = `Initial isPublic: ${playlist.isPublic}\n`;
+    playlist.togglePublic();
+    output.textContent += `After first toggle: ${playlist.isPublic}\n`;
+    playlist.togglePublic();
+    output.textContent += `After second toggle: ${playlist.isPublic}`;
+  </script>
+</body>
+</html>

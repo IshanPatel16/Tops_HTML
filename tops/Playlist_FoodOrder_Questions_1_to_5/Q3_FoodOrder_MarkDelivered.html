@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Question 3 - FoodOrder</title></head>
+<body>
+  <h1>Question 3: Mark Food Order Delivered</h1>
+  <pre id="output"></pre>
+  <script>
+    class FoodOrder {
+      constructor(orderId, restaurantName, isDelivered) {
+        this.orderId = orderId;
+        this.restaurantName = restaurantName;
+        this.isDelivered = isDelivered;
+      }
+
+      markDelivered() {
+        this.isDelivered = true;
+        return `Order ${this.orderId} from ${this.restaurantName} has been delivered.`;
+      }
+    }
+
+    const order = new FoodOrder(101, "Pizza Corner", false);
+    const message = order.markDelivered();
+    document.getElementById("output").textContent =
+      `${message}\nIs Delivered: ${order.isDelivered}`;
+  </script>
+</body>
+</html>

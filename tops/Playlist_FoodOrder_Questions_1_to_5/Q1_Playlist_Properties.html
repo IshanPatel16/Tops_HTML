@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Question 1 - Playlist Properties</title></head>
+<body>
+  <h1>Question 1: Playlist Properties</h1>
+  <pre id="output"></pre>
+  <script>
+    class Playlist {
+      constructor(name, createdOn, isPublic) {
+        this.name = name;
+        this.createdOn = createdOn;
+        this.isPublic = isPublic;
+      }
+    }
+
+    const playlist = new Playlist("My Favorites", new Date("2026-09-29"), true);
+    document.getElementById("output").textContent =
+      `Name: ${playlist.name}\nCreated On: ${playlist.createdOn.toDateString()}\nIs Public: ${playlist.isPublic}`;
+  </script>
+</body>
+</html>

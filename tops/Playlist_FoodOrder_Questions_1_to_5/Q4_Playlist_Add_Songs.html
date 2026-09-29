@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Question 4 - Add Songs</title></head>
+<body>
+  <h1>Question 4: Add Songs to Playlist</h1>
+  <pre id="output"></pre>
+  <script>
+    class Playlist {
+      constructor(name, createdOn, isPublic) {
+        this.name = name;
+        this.createdOn = createdOn;
+        this.isPublic = isPublic;
+        this.songs = [];
+      }
+
+      addSong(songTitle) {
+        this.songs.push(songTitle);
+      }
+    }
+
+    const playlist = new Playlist("My Favorites", new Date("2026-09-29"), true);
+    playlist.addSong("Blinding Lights");
+    playlist.addSong("Less Than Zero");
+    playlist.addSong("The Hills");
+
+    document.getElementById("output").textContent =
+      `Playlist: ${playlist.name}\nSongs:\n${playlist.songs.map((song, index) => `${index + 1}. ${song}`).join("\n")}`;
+  </script>
+</body>
+</html>
