@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+
 using namespace std;
 
 class Task {
@@ -9,10 +10,7 @@ private:
     bool isDone;
 
 public:
-    Task(string taskTitle) {
-        title = taskTitle;
-        isDone = false;
-    }
+    Task(const string& taskTitle) : title(taskTitle), isDone(false) {}
 
     void markDone() {
         isDone = true;
@@ -28,12 +26,12 @@ private:
     vector<Task> tasks;
 
 public:
-    void addTask(string title) {
-        tasks.push_back(Task(title));
+    void addTask(const string& title) {
+        tasks.emplace_back(title);
     }
 
     void markTaskDone(int index) {
-        if (index >= 0 && index < (int)tasks.size()) {
+        if (index >= 0 && index < static_cast<int>(tasks.size())) {
             tasks[index].markDone();
         } else {
             cout << "Invalid task index." << endl;
@@ -42,8 +40,7 @@ public:
 
     void showTasks() const {
         cout << "\nTask List:" << endl;
-
-        for (int i = 0; i < (int)tasks.size(); i++) {
+        for (size_t i = 0; i < tasks.size(); ++i) {
             cout << i + 1 << ". ";
             tasks[i].display();
         }
@@ -53,12 +50,17 @@ public:
 int main() {
     TaskList taskList;
 
-    taskList.addTask("Complete C assignment");
-    taskList.addTask("Practice programming");
-    taskList.addTask("Prepare presentation");
+    taskList.addTask("Complete C++ assignment");
+    taskList.addTask("Study OOP concepts");
+    taskList.addTask("Practice Git");
 
+    cout << "Before marking a task as done:";
+    taskList.showTasks();
+
+    // Mark the second task as done (index 1).
     taskList.markTaskDone(1);
 
+    cout << "\nAfter marking task 2 as done:";
     taskList.showTasks();
 
     return 0;

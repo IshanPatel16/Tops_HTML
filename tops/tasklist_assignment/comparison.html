@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C vs C++ TaskList Comparison</title>
+</head>
+<body>
+    <h1>Procedural C vs OOP C++ TaskList</h1>
+
+    <p>
+        The C version uses global arrays and separate functions, while the C++
+        version groups task data and behavior into classes and methods.
+    </p>
+
+    <h2>Three Problems in the C Version Solved by OOP</h2>
+
+    <ol>
+        <li>
+            <strong>Global data management:</strong>
+            In C, the task array and task count are global variables, so many
+            functions can access and modify them directly. In C++, the
+            <code>TaskList</code> class keeps the task collection private and
+            controls access through methods such as <code>addTask()</code> and
+            <code>markTaskDone()</code>.
+        </li>
+
+        <li>
+            <strong>Limited data structure:</strong>
+            The C version has a fixed-size array that can hold only five tasks.
+            The C++ version uses <code>vector&lt;Task&gt;</code>, which can grow
+            dynamically as tasks are added.
+        </li>
+
+        <li>
+            <strong>Data and behavior are separated:</strong>
+            In C, task information and functions that operate on it are
+            separate. In C++, the <code>Task</code> class combines the task's
+            data (<code>title</code> and <code>isDone</code>) with behavior
+            (<code>markDone()</code> and <code>display()</code>). This makes
+            the program easier to organize and extend.
+        </li>
+    </ol>
+
+    <h2>Summary</h2>
+    <p>
+        The procedural C approach works well for a small fixed task list.
+        The OOP approach provides better organization, encapsulation, and
+        flexibility as the program becomes larger.
+    </p>
+</body>
+</html>
