@@ -1,0 +1,27 @@
+Compile with g++:
+
+Q1:
+g++ Q1_Create_Favorite_Songs.cpp -o q1
+./q1
+
+Q2:
+g++ Q2_Read_Favorite_Songs.cpp -o q2
+./q2
+
+Q3:
+g++ Q3_Append_New_Song.cpp -o q3
+./q3
+
+Q4:
+g++ Q4_Flipkart_Wishlist_Tracker.cpp -o q4
+./q4
+
+Q5:
+g++ Q5_Count_Instagram_Followers.cpp -o q5
+./q5
+
+Important:
+- Q1 creates/overwrites my_fav_songs.txt with the five sample songs.
+- Q3 uses append mode, so it does not overwrite existing songs.
+- Q4 creates/overwrites wishlist.txt for the current 3-product wishlist.
+- Q5 counts usernames directly while reading and does not use an array or vector.
